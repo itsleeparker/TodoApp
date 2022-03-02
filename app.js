@@ -85,7 +85,7 @@ app.post('/delete', (req, res) => {
   const listName = req.body.listName;
 
   if ('Today' == listName) {
-    Item.deleteOne(checkedItem, err => {
+    Item.deleteOne({_id: checkedItem}, err => {
       if (err) {
         throw err;
       }
